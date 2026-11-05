@@ -55,9 +55,7 @@
 			<div class="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 				<div class="mx-auto max-w-4xl text-center">
 					<div class="mb-7 flex items-center justify-center gap-5">
-						<span class="flex h-16 w-16 flex-none items-center justify-center overflow-hidden rounded-xl bg-white p-2.5 shadow-lg shadow-slate-950/20 sm:h-[4.5rem] sm:w-[4.5rem]">
-							<img src="/CaIcon2.svg" width="52" height="52" alt="" class="h-full w-full object-contain" />
-						</span>
+						<img src="/CaIcon2.svg" width="72" height="72" alt="" class="h-16 w-16 flex-none drop-shadow-lg sm:h-[4.5rem] sm:w-[4.5rem]" />
 						<p class="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-100/80">Customer Actions for Jira</p>
 					</div>
 					<h1 id="hero-title" class="text-[clamp(40px,6vw,68px)] font-bold leading-[1.04] tracking-tight text-white">
@@ -72,8 +70,8 @@
 					</div>
 					<div class="mt-8 flex flex-col items-center justify-center gap-2 text-sm text-white/80">
 						<span>Available on</span>
-						<a href={MARKETPLACE_LINK} target="_blank" rel="noreferrer" aria-label="Atlassian Marketplace listing" class="rounded bg-white/95 px-3 py-1.5">
-							<img src="/main/amp.png" width="190" height="16" alt="Atlassian Marketplace" class="h-4 w-auto" />
+						<a href={MARKETPLACE_LINK} target="_blank" rel="noreferrer" aria-label="Atlassian Marketplace listing" data-umami-event="marketplace_click" data-umami-event-product="customer_actions" data-umami-event-listing-id="1229532" data-umami-event-intent="trial" data-umami-event-source-page="/" data-umami-event-placement="homepage_hero_badge">
+							<img src="/atlassian-marketplace-inverse.svg" width="266" height="22" alt="Atlassian Marketplace" class="h-5 w-auto" />
 						</a>
 					</div>
 				</div>

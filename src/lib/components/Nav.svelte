@@ -37,9 +37,7 @@
 			</a>
 			<div class="hidden h-7 w-px bg-[var(--border-subtle)] sm:block"></div>
 			<a href="/" class="hidden items-center gap-3 hover:no-underline sm:flex">
-				<span class="flex h-9 w-9 flex-none items-center justify-center overflow-hidden rounded-lg border border-[var(--border-subtle)] bg-white p-1">
-					<img src="/CaIcon2.svg" width="28" height="28" alt="" class="h-full w-full object-contain" />
-				</span>
+				<img src="/CaIcon2.svg" width="36" height="36" alt="" class="h-9 w-9 flex-none" />
 				{#if h1}
 					<h1 class="m-0 text-base font-semibold text-[var(--text-primary)]">{title} for Jira</h1>
 				{:else}
