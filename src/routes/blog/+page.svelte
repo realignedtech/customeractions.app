@@ -4,6 +4,14 @@
 
 	const posts = [
 		{
+			href: '/articles/rebuilding-customer-actions-for-jira-on-forge',
+			title: 'Rebuilding Customer Actions for Jira on Forge',
+			date: '2026-11-05',
+			dateLabel: 'November 5, 2026',
+			highlight: '/main/ca12.png',
+			description: 'We are rebuilding Customer Actions for Jira on Forge: the same app, the same data, and nothing to migrate.'
+		},
+		{
 			href: '/articles/how-to-change-the-reporter-from-the-jira-portal',
 			title: 'How to change the reporter from the Jira customer portal',
 			date: '2023-02-28',
