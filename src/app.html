@@ -4,12 +4,11 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/miniicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--
-			Analytics: customeractions.app has no Umami website ID yet, so no
-			tracker ships here. Do not reuse the portfoliomapping.app property.
-			When a Customer Actions property is created, add it here and allow
-			the origin in deploy/Caddyfile's Content-Security-Policy.
-		-->
+		<script
+			defer
+			src="https://data.windshift.dev/script.js"
+			data-website-id="ad941d19-7a19-4f12-82df-d785f0e260e3"
+		></script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

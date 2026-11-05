@@ -44,14 +44,13 @@ serving the prerendered export on :8077 behind Traefik. The deploy script
 builds, ships the container to the web host, restarts the service, then runs
 `scripts/verify-production.mjs` against https://customeractions.app.
 
-## Open items
+## Status
 
-- **Analytics:** customeractions.app has no Umami website ID, so `src/app.html`
-  ships no tracker and `deploy/Caddyfile` allows no analytics origin. Do not
-  reuse the portfoliomapping.app property. When a property exists, add the
-  script and allow its origin in the same change.
 - **Live since 2026-11-05.** DNS points at the Windshift host, the certificate
-  covers the apex and `www`, and the CI `Verify live` job passes. The old
-  Netlify site is retained only as a DNS rollback; on the host,
-  `ssh core@windshift.sh 'realigned-deploy customeractions rollback-<timestamp>'`
+  covers the apex and `www`, and the CI `Verify live` job passes.
+- **Analytics:** the Umami tracker for `data.windshift.dev` with website ID
+  `ad941d19-7a19-4f12-82df-d785f0e260e3` ships in `src/app.html`; the origin is
+  allowed in `deploy/Caddyfile`'s `script-src` and `connect-src`.
+- **Rollback:** the old Netlify site is retained only as a DNS rollback; on the
+  host, `ssh core@windshift.sh 'realigned-deploy customeractions rollback-<timestamp>'`
   returns the container to the previous image.

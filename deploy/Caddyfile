@@ -39,10 +39,9 @@
 		Strict-Transport-Security "max-age=31536000; includeSubDomains"
 		X-Frame-Options DENY
 		Permissions-Policy "camera=(), geolocation=(), microphone=(), payment=(), usb=()"
-		# No analytics origin is allowed yet: customeractions.app has no Umami
-		# website ID, so app.html ships no tracker. If one is added, allow its
-		# origin in script-src and connect-src here in the same change.
-		Content-Security-Policy "default-src 'self'; base-uri 'self'; connect-src 'self'; font-src 'self' data:; form-action 'self'; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; worker-src 'self' blob:"
+		# Analytics: the Umami tracker on data.windshift.dev. The origin must be
+		# allowed in both script-src (the script) and connect-src (the beacon).
+		Content-Security-Policy "default-src 'self'; base-uri 'self'; connect-src 'self' https://data.windshift.dev; font-src 'self' data:; form-action 'self'; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; script-src 'self' 'unsafe-inline' https://data.windshift.dev; style-src 'self' 'unsafe-inline'; worker-src 'self' blob:"
 	}
 
 	# adapter-static emits flat files — /docs/support is docs/support.html.
