@@ -70,6 +70,12 @@
 						<a href={MARKETPLACE_LINK} target="_blank" rel="noreferrer" data-umami-event="marketplace_click" data-umami-event-product="customer_actions" data-umami-event-listing-id="1229532" data-umami-event-intent="trial" data-umami-event-source-page="/" data-umami-event-placement="homepage_hero" class="realigned-primary-button text-base">Start a free trial</a>
 						<a href="/docs" class="realigned-secondary-button text-base">Read the documentation</a>
 					</div>
+					<div class="mt-8 flex flex-col items-center justify-center gap-2 text-sm text-white/80">
+						<span>Available on</span>
+						<a href={MARKETPLACE_LINK} target="_blank" rel="noreferrer" aria-label="Atlassian Marketplace listing" class="rounded bg-white/95 px-3 py-1.5">
+							<img src="/main/amp.png" width="190" height="16" alt="Atlassian Marketplace" class="h-4 w-auto" />
+						</a>
+					</div>
 				</div>
 
 				<div class="relative mx-auto mt-12 max-w-6xl sm:mt-16">
@@ -118,7 +124,19 @@
 			</div>
 		</section>
 
-		<section aria-labelledby="workflow-title" class="bg-[var(--bg-base)] py-24">
+		<section aria-labelledby="customize-title" class="bg-[var(--bg-base)] pt-24 pb-12">
+			<div class="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
+				<img src="/main/ca3.png" width="1743" height="1070" loading="lazy" alt="Customer Actions configuration with configurable labels, request types, and editable fields" class="w-full drop-shadow-2xl" />
+				<div>
+					<p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">Highly customizable</p>
+					<h2 id="customize-title" class="text-3xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-4xl">Configure the action around the request.</h2>
+					<p class="mt-5 text-lg leading-relaxed text-[var(--text-secondary)]">Actions are fully configurable, including labels and messages. Choose the request types an action applies to, pick the editable fields, and show the action only when a condition is met.</p>
+					<a href="/docs/display-conditions" class="realigned-secondary-button mt-8">See display conditions</a>
+				</div>
+			</div>
+		</section>
+
+		<section aria-labelledby="workflow-title" class="bg-[var(--bg-base)] pt-12 pb-24">
 			<div class="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
 				<div>
 					<p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">Seamlessly integrated</p>
