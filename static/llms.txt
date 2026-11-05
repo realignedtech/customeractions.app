@@ -1,0 +1,28 @@
+# Customer Actions for Jira
+
+> Customer Actions for Jira extends the Jira Service Management customer portal with configurable actions: customers can edit their requests, select and link related issues, and read and acknowledge documents. Published by Realigned Technologies.
+
+## Product
+
+- [Customer Actions for Jira](https://customeractions.app/): interactive actions for the Jira Service Management portal.
+- [Atlassian Marketplace listing](https://marketplace.atlassian.com/1229532)
+
+## Documentation
+
+- [Documentation home](https://customeractions.app/docs)
+- [Setup](https://customeractions.app/docs/setup)
+- [Creating actions](https://customeractions.app/docs/creating-actions)
+- [Action types](https://customeractions.app/docs/action-types)
+- [Edit issues](https://customeractions.app/docs/action-types/edit-issues)
+- [Select issues](https://customeractions.app/docs/action-types/select-issues)
+- [Sign documents](https://customeractions.app/docs/action-types/sign-documents)
+- [Display conditions](https://customeractions.app/docs/display-conditions)
+
+## Trust and support
+
+- [Trust Center](https://customeractions.app/trust)
+- [Security policy](https://customeractions.app/trust/security-policy)
+- [Security scanning](https://customeractions.app/trust/security-scanning)
+- [Bug fix policy](https://customeractions.app/trust/bug-fix-policy)
+- [Privacy information](https://customeractions.app/docs/support/privacy)
+- [Support](https://customeractions.app/docs/support)

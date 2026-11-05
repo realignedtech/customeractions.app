@@ -1,0 +1,60 @@
+# Customer Actions (customeractions.app).
+#
+# Traefik terminates TLS and proxies here over windshift.network, so Caddy
+# only ever speaks plain HTTP on :8077.
+:8077 {
+	root * /srv
+
+	encode gzip zstd
+
+	# The previous Next.js origin published a sitemap index at /sitemap.xml that
+	# pointed at /sitemap-0.xml. The new site emits a single /sitemap.xml, so
+	# keep the old direct URL alive with a permanent redirect instead of a 404.
+	@oldSitemap path /sitemap-0.xml
+	redir @oldSitemap /sitemap.xml 301
+
+	# adapter-static emits flat .html files. Normalize trailing-slash requests
+	# before try_files sees a matching directory (for example /docs/), otherwise
+	# Caddy attempts to serve the directory and returns 404.
+	#
+	# Backslashes are excluded: browsers treat "\" like "/" when resolving a
+	# redirect, so echoing one back would turn this into an open redirect:
+	# "/%5Cevil.com/" would become "Location: /\evil.com" and resolve to
+	# https://evil.com. No route uses a backslash, so those requests fall
+	# through to a real 404 instead of being redirected.
+	#
+	# 301 matches the status the Netlify origin answered trailing-slash
+	# requests with for years; search engines treat 301 and 308 identically.
+	@trailingSlash {
+		path_regexp trailingSlash ^(.+)/$
+		not path_regexp backslash `(?i)(\\|%5c)`
+	}
+	redir @trailingSlash {re.trailingSlash.1} 301
+
+	# Everything under _app/immutable is content-hashed by SvelteKit.
+	header /_app/immutable/* Cache-Control "public, max-age=31536000, immutable"
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Frame-Options DENY
+		Permissions-Policy "camera=(), geolocation=(), microphone=(), payment=(), usb=()"
+		# No analytics origin is allowed yet: customeractions.app has no Umami
+		# website ID, so app.html ships no tracker. If one is added, allow its
+		# origin in script-src and connect-src here in the same change.
+		Content-Security-Policy "default-src 'self'; base-uri 'self'; connect-src 'self'; font-src 'self' data:; form-action 'self'; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; worker-src 'self' blob:"
+	}
+
+	# adapter-static emits flat files — /docs/support is docs/support.html.
+	# Resolve those before 404ing. Unknown paths then serve the prerendered
+	# 404.html (noindex) with a real 404 status.
+	try_files {path} {path}.html {path}/index.html
+	file_server
+
+	handle_errors {
+		rewrite * /404.html
+		file_server
+	}
+
+	log
+}

@@ -1,0 +1,17 @@
+[Unit]
+Description=Customer Actions static production site
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+Image=localhost/customeractions-next:1
+ContainerName=customeractions-next
+Network=windshift.network
+LogDriver=journald
+
+[Service]
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target default.target

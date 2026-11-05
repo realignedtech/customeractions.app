@@ -1,0 +1,179 @@
+@import "@fontsource/outfit/latin-400.css";
+@import "@fontsource/outfit/latin-500.css";
+@import "@fontsource/outfit/latin-600.css";
+@import "@fontsource/outfit/latin-700.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Trade Winds — the shared clear-sky visual language adopted from the
+ * windshift-website. A white canvas, sky-tinted surfaces, ink typography,
+ * and one deep-water action blue. Weather (sky gradients and dot clouds)
+ * lives in full-bleed hero bands; content zones stay flat and bordered.
+ */
+:root {
+    --font-family-base: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --text-base: 12pt;
+    --letter-spacing: -0.011em;
+    --line-height: 1.6;
+
+    /* Surfaces */
+    --bg-base: #ffffff;
+    --bg-surface: #ffffff;
+    --bg-surface-hover: #edf7fc;
+    --bg-elevated: #edf7fb;
+    --bg-surface-strong: #dceff8;
+
+    /* Lines */
+    --border-subtle: #d5e2eb;
+    --border-strong: #b9cfdd;
+    --footer-border: rgba(255, 255, 255, 0.2);
+
+    /* Typography */
+    --text-primary: #102d4a;
+    --text-secondary: #50677b;
+    --text-muted: #6e8295;
+
+    /* Action + signal: pressed is Instrument Deep Blue, followed is the same
+       hue. Sky remains for wayfinding accents on weather bands. Orange is
+       the conversion color, reserved for primary high-intent actions. */
+    --accent-cyan: #0369a1;
+    --accent-blue: #0369a1;
+    --accent-sky: #0284c7;
+    --accent-sky-soft: #38bdf8;
+    --action-hover: #0c3468;
+    --action-soft: #e0f3fc;
+    --accent-orange: #f97316;
+    --accent-gold: #f59e0b;
+    --conversion-hover: #ea580c;
+
+    /* Status */
+    --status-success: #166534;
+    --status-warning: #92400e;
+    --status-danger: #b91c1c;
+
+    /* The site ships light only. Pin the UA widget palette so form controls,
+       scrollbars, and text cursors never flip dark with the OS preference. */
+    color-scheme: light;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-size: var(--text-base);
+    font-family: var(--font-family-base);
+    letter-spacing: var(--letter-spacing);
+    line-height: var(--line-height);
+    background: var(--bg-base);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Limit repaints and improve font rendering */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Weather: the light top of the sky. Hero bands stay blue with white text;
+   everything below the fold is flat white with sky glows in the band layer.
+   Two gradient layers only: taller stacks mis-rasterize when the band is
+   partially scrolled out of view. */
+.header-gradient,
+.realigned-hero {
+    background:
+        radial-gradient(ellipse 90% 70% at 12% 10%, rgba(255, 255, 255, 0.34) 0%, transparent 55%),
+        radial-gradient(ellipse 140% 130% at 72% 24%, #7dd3fc 0%, #38bdf8 20%, #0ea5e9 42%, #0284c7 66%, #075985 100%);
+}
+
+/* Content band: white with faint sky glows. Replaces the former dark
+   section gradient; carries ink text, never white. */
+.realigned-band {
+    background:
+        radial-gradient(ellipse 86% 58% at 8% 15%, rgba(125, 211, 252, 0.22) 0%, transparent 58%),
+        radial-gradient(ellipse 72% 54% at 94% 82%, rgba(32, 168, 223, 0.12) 0%, transparent 62%),
+        #ffffff;
+}
+
+.realigned-card {
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-surface);
+    box-shadow: 0 20px 44px -30px rgba(3, 105, 161, 0.35);
+}
+
+.realigned-primary-button,
+.realigned-secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.25rem;
+    padding: 0.9rem 1.2rem;
+    font-weight: 600;
+    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.realigned-primary-button {
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-gold) 100%);
+    border: 1px solid transparent;
+    box-shadow: 0 10px 22px -12px color-mix(in srgb, var(--accent-orange) 88%, transparent);
+}
+
+.realigned-secondary-button {
+    color: #ffffff;
+    background: linear-gradient(105deg, #0369a1 0%, #0284c7 55%, #0e7490 100%);
+    border: 1px solid transparent;
+    box-shadow: 0 10px 22px -14px color-mix(in srgb, #0369a1 85%, transparent);
+}
+
+.realigned-primary-button:hover,
+.realigned-secondary-button:hover {
+    transform: translateY(-1px);
+}
+
+.realigned-primary-button:hover {
+    background: linear-gradient(135deg, var(--conversion-hover) 0%, var(--accent-orange) 100%);
+    box-shadow: 0 12px 26px -12px color-mix(in srgb, var(--accent-orange) 92%, transparent);
+}
+
+.realigned-secondary-button:hover {
+    background: linear-gradient(105deg, #075985 0%, #0369a1 55%, #0e7490 100%);
+    border-color: transparent;
+}
+
+/* On the blue weather band the secondary keeps its translucent glass look;
+   a blue gradient would melt into the sky behind it. */
+.realigned-hero .realigned-secondary-button {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+}
+
+.realigned-hero .realigned-secondary-button:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.55);
+}
+
+/* Focus visibility for keyboard users across the whole site. */
+:focus-visible {
+    outline: 2px solid var(--accent-sky-soft);
+    outline-offset: 3px;
+}
