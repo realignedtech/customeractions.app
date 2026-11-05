@@ -50,6 +50,12 @@ builds, ships the container to the web host, restarts the service, then runs
   ships no tracker and `deploy/Caddyfile` allows no analytics origin. Do not
   reuse the portfoliomapping.app property. When a property exists, add the
   script and allow its origin in the same change.
-- **Traefik:** the router and certificate for `customeractions.app` live in the
-  infra repo and are added at rollout (MA-91). The container port :8077 is a
-  proposal until that router is confirmed.
+- **DNS cut:** the container and Traefik router are live on the Windshift host
+  (`customeractions-next.service`, `:8077`), but `customeractions.app` still
+  resolves to the old Netlify origin. Until DNS points at the host, Traefik
+  cannot complete the ACME HTTP-01 challenge and the `Verify live` CI job fails
+  against the old site. Flip DNS, wait for the certificate, then re-run the
+  workflow's `Verify live` job.
+- **Rollback:** the old Netlify site stays available until the cutover is
+  confirmed. On the host, `ssh core@windshift.sh 'realigned-deploy customeractions rollback-<timestamp>'`
+  returns the container to the previous image.
