@@ -98,7 +98,7 @@
 					</button>
 				</li>
 				<li>
-					<a href={marketplaceLink} target="_blank" rel="noreferrer" data-umami-event="marketplace_click" data-umami-event-product="customer_actions" data-umami-event-listing-id="1229532" data-umami-event-intent="trial" data-umami-event-source-page={sourcePage} data-umami-event-placement="nav_desktop" class="realigned-primary-button !rounded-md !px-5 !py-2.5 text-base">
+					<a href={marketplaceLink} target="_blank" rel="noreferrer" data-umami-event="marketplace_click" data-umami-event-product="customer_actions" data-umami-event-listing-id="1229532" data-umami-event-intent="trial" data-umami-event-source-page={sourcePage} data-umami-event-placement="nav_desktop" class="realigned-primary-button !rounded-md !px-5 !py-[9px] text-base">
 						View on Marketplace
 					</a>
 				</li>
@@ -112,7 +112,7 @@
 					<a class="rounded-md px-2 py-2 text-base font-medium {highlight === 'Blog' ? 'text-[var(--accent-cyan)] font-semibold' : 'text-[var(--text-secondary)]'}" href="/blog" onclick={() => (open = false)}>Blog</a>
 					<a class="rounded-md px-2 py-2 text-base font-medium {highlight === 'Trust Center' ? 'text-[var(--accent-cyan)] font-semibold' : 'text-[var(--text-secondary)]'}" href="/trust" onclick={() => (open = false)}>Trust Center</a>
 					<a class="rounded-md px-2 py-2 text-base font-medium text-[var(--text-secondary)]" href="https://realigned.io?utm_source=customeractions_site" rel="noreferrer">All Realigned apps</a>
-					<a href={marketplaceLink} target="_blank" rel="noreferrer" data-umami-event="marketplace_click" data-umami-event-product="customer_actions" data-umami-event-listing-id="1229532" data-umami-event-intent="trial" data-umami-event-source-page={sourcePage} data-umami-event-placement="nav_mobile" class="realigned-primary-button mt-3 self-start !rounded-md !px-5 !py-2.5 text-base">
+					<a href={marketplaceLink} target="_blank" rel="noreferrer" data-umami-event="marketplace_click" data-umami-event-product="customer_actions" data-umami-event-listing-id="1229532" data-umami-event-intent="trial" data-umami-event-source-page={sourcePage} data-umami-event-placement="nav_mobile" class="realigned-primary-button mt-3 self-start !rounded-md !px-5 !py-[9px] text-base">
 						View on Marketplace
 					</a>
 				</div>

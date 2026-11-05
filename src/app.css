@@ -117,6 +117,8 @@ a {
     box-shadow: 0 20px 44px -30px rgba(3, 105, 161, 0.35);
 }
 
+/* Buttons match the windshift.sh control height (44px) so the estate reads as
+   one product family: 24px line box + 2x9px vertical padding + 1px border. */
 .realigned-primary-button,
 .realigned-secondary-button {
     display: inline-flex;
@@ -124,8 +126,9 @@ a {
     justify-content: center;
     gap: 0.5rem;
     border-radius: 0.25rem;
-    padding: 0.9rem 1.2rem;
+    padding: 0.5625rem 1.2rem;
     font-weight: 600;
+    line-height: 1.5;
     transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
