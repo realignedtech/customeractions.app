@@ -80,6 +80,7 @@
 	.docs-content :global(h2 a:hover),
 	.docs-content :global(h3 a:hover),
 	.docs-content :global(h4 a:hover) { color: inherit; text-decoration: none; }
-	.docs-content :global(a.realigned-primary-button) { color: white; text-decoration: none; }
+	.docs-content :global(a.realigned-primary-button),
+	.docs-content :global(a.realigned-secondary-button) { color: white; text-decoration: none; }
 	.docs-content :global(img) { width: 100%; height: auto; margin: 2rem auto; border: 1px solid var(--border-subtle); border-radius: .6rem; box-shadow: 0 14px 30px -22px rgba(3, 105, 161, 0.4); }
 </style>
