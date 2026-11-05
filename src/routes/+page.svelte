@@ -78,15 +78,13 @@
 
 				<div class="relative mx-auto mt-12 max-w-6xl sm:mt-16">
 					<div class="absolute -inset-10 rounded-full bg-cyan-300/10 blur-3xl"></div>
-					<div class="realigned-card relative overflow-hidden rounded-xl bg-white p-2 sm:p-3">
-						<img
-							src="/main/ca12.png"
-							width="1743"
-							height="1070"
-							alt="Customer Actions configuration screen in Jira Service Management"
-							class="w-full rounded-lg"
-						/>
-					</div>
+					<img
+						src="/main/ca12.png"
+						width="1743"
+						height="1070"
+						alt="Customer Actions configuration screen in Jira Service Management"
+						class="relative w-full rounded-xl shadow-2xl shadow-slate-950/40"
+					/>
 				</div>
 			</div>
 		</section>
