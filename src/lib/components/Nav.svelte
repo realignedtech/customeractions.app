@@ -33,7 +33,7 @@
 		<!-- Left: Logo + App title -->
 		<div class="flex min-w-0 items-center gap-3">
 			<a href="/" aria-label="Back to homepage" class="flex-shrink-0">
-				<img alt="Realigned Logo" width="119" height="34" src="/Realigned-ink.svg" class="h-[34px] w-auto" />
+				<img alt="Realigned Logo" width="119" height="34" src="/Realigned-ink.svg?v=2" class="h-[34px] w-auto" />
 			</a>
 			<div class="hidden h-7 w-px bg-[var(--border-subtle)] sm:block"></div>
 			<a href="/" class="hidden items-center gap-3 hover:no-underline sm:flex">

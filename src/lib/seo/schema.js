@@ -8,7 +8,7 @@ export const organizationSchema = {
 	name: 'Realigned Technologies Ltd',
 	alternateName: 'Realigned',
 	url: 'https://realigned.io',
-	logo: `${siteOrigin}/Realigned-ink.svg`,
+	logo: `${siteOrigin}/Realigned-ink.svg?v=2`,
 	email: 'info@realigned.io',
 	address: {
 		'@type': 'PostalAddress',

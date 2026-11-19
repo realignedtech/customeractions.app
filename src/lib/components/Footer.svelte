@@ -10,7 +10,7 @@
 	<div class="mx-auto px-4 py-12 transition-[max-width] duration-300 ease-in-out sm:px-6 lg:px-8 lg:py-16 {wide ? 'max-w-[90rem]' : 'max-w-7xl'}">
 		<div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5 lg:gap-10">
 			<div class="col-span-2 md:col-span-3 lg:col-span-1">
-				<img src="/Realigned.svg" width="140" height="40" loading="lazy" decoding="async" alt="Realigned Technologies" class="mb-4 h-9 w-auto" />
+				<img src="/Realigned.svg?v=2" width="140" height="40" loading="lazy" decoding="async" alt="Realigned Technologies" class="mb-4 h-9 w-auto" />
 				<p class="max-w-xs text-sm leading-relaxed text-white/75">Focused Jira apps for product, support, and delivery teams, built by Realigned Technologies Ltd.</p>
 				<div class="mt-5 flex items-center gap-4">
 					<a class="text-white/75 transition-colors hover:text-white" href="https://twitter.com/RealignedT" aria-label="Realigned on Twitter" rel="noreferrer">
